@@ -1,0 +1,10 @@
+一周leetcode
+369 
+ListNode *dummy = new ListNode(0); //添加虚头结点
+dummy->next = head;
+
+1893. 检查是否区域内所有整数都被覆盖
+学习下官方差分数据的方法
+
+面试题 01.04. 回文排列
+emplace比insert效率高好多啊

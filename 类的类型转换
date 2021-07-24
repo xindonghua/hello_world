@@ -1,0 +1,17 @@
+类的类型转换
+
+operator TypeName();
+
+TypeName可以替换成需要的数据类型名，且转换函数必须定义为成员函数，转换函数不能指定返回类型，也不能有参数。
+但是必须返回转换后的值。
+
+className::operator double() const
+{
+		return a_double_value;
+}
+
+只有一个参数的构造函数为类提供了隐式的类型转换。
+比如将int值赋给一个 Stonewt对象， 则会隐式的调用Stonewt(int a){};这个构造函数
+Stonewt st = 1;  和下面的等下
+Stonewt st = Stonewt(1); 
+所以要特别注意这种情况的发生，使用关键字explicit修饰单参数的构造函数，方式这种隐式转换的发生。
