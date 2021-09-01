@@ -37,7 +37,7 @@ t4= t1.operator+(t2.operator+(t3));
 不能重载的运算符
 sizeof . .* :: ?: typeid const_cast dynamic_cast reinterpret_cast static_cast 强制类型转换运算符
 
-下列运算符只能通过成员函数重载，也就是说只能在类中进行重载
+下列运算符只能通过成员函数重载，也就是说只能在类中进行重载，而不能使用友元函数。
 =赋值运算符 ()调用运算符 []下标运算符 -> 指针访问运算符
 
 

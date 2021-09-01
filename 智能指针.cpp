@@ -110,3 +110,9 @@ w.use_count() 与w共享对象的shared_ptr数量
 w.expired() 若w.use_count() ==0 返回true
 w.lock() 如果expired为true 则返回一个空sp ，否则返回一个指向w对象的sp
 
+
+weak_ptr用途
+
+防止shared_ptr出现环，循环引用导致资源无法释放
+临时使用权，当一个对象随时可能被删除，并且只有当对象存在是才能被访问，可以使用weak_ptr获得临时使用权
+

@@ -20,7 +20,7 @@ struct {int d;double b;} anon_s;
 decltype(anon_s) as;
 
 //结合泛型编程，获得函数返回值类型
-template<typena,e _Tx, typename _Ty>
+template<typename _Tx, typename _Ty>
 auto multioly(_Tx x, _Ty y)->decltype(x*y){return x*y}
 
 decltype推导规则
@@ -37,7 +37,7 @@ int&& RvalvRef();
 decltype(arr) var1 //var1 is int
 decltype(ptr) var2 // var 2 is int*
 //规则2，将亡值，推导值为类型的右值引用
-decltype(RvalvRef()) var5 = 1; //var5 is in&&;
+decltype(RvalvRef()) var5 = 1; //var5 is int&&;
 
 //规则3，左值，推导为类型的引用
 decltype(true?i:i) var7 = i; //var7 is int&, 条件表达式返回左值
@@ -106,7 +106,7 @@ const auto cx = x // auto是int，符合情形3，实际类型是const int
 const auto& rx = x //情况1，忽略应用部分 auto是int 实际是 const int&
 auto y=N //情况3 忽略const auto 是int y是实际类型也是int
 
-auto&& y1 =x; //左值：情况二，expr是左值，则T和ParamType军备推导为左值引用，int&
+auto&& y1 =x; //左值：情况二，expr是左值，则T和ParamType均被推导为左值引用，int&
 auto&& y2 =cx; // 同上， int&
 auto&& y3 =10; //右值的话，符合情况一，就是auto为int 实例类型是 int&&
 
